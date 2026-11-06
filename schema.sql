@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS doctors (id TEXT PRIMARY KEY, name TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS orders (id TEXT PRIMARY KEY, doctor_id TEXT NOT NULL REFERENCES doctors(id), patient TEXT NOT NULL, date TEXT NOT NULL, due TEXT NOT NULL, types TEXT NOT NULL, color TEXT NOT NULL, template TEXT NOT NULL, units INTEGER NOT NULL DEFAULT 1, description TEXT NOT NULL DEFAULT '');
+CREATE INDEX IF NOT EXISTS idx_orders_doctor ON orders(doctor_id, patient);
+CREATE TABLE IF NOT EXISTS prices (work_type TEXT PRIMARY KEY, amount REAL NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS notes (id TEXT PRIMARY KEY, doctor_id TEXT NOT NULL REFERENCES doctors(id), patient TEXT NOT NULL, text TEXT NOT NULL, date TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS idx_notes_doctor ON notes(doctor_id, patient);

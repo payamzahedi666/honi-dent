@@ -9,4 +9,4 @@ binding = "ASSETS"
 [[d1_databases]]
 binding = "DB"
 database_name = "honi-dent"
-database_id = "PASTE_YOUR_D1_DATABASE_ID"
+database_id = "d87161e0-a0ce-46a0-9540-c88f522d07e8"
